@@ -1,11 +1,10 @@
 package com.example.simple_diary_planner.feature_create_task.repository
 
-import com.example.simple_diary_planner.core_data.room.TaskDao
-import com.example.simple_diary_planner.core_model.TaskEntity
+import com.example.core_data.model.TaskEntity
 import javax.inject.Inject
 
 class CreateTaskRepositoryImpl @Inject constructor(
-    private val taskDao: TaskDao
+    private val taskDao: com.example.core_data.room.TaskDao
 ) : CreateTaskRepository {
     override suspend fun saveTask(taskEntity: TaskEntity) {
         taskDao.insertTask(taskEntity)

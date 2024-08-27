@@ -1,6 +1,5 @@
 package com.example.simple_diary_planner.feature_create_task.di
 
-import com.example.simple_diary_planner.core_data.room.TaskDao
 import com.example.simple_diary_planner.feature_create_task.domain.CreateTaskUseCase
 import com.example.simple_diary_planner.feature_create_task.domain.CreateTaskUseCaseImpl
 import com.example.simple_diary_planner.feature_create_task.repository.CreateTaskRepository
@@ -15,7 +14,7 @@ import dagger.hilt.components.SingletonComponent
 object CreateTaskModule {
 
     @Provides
-    fun provideCreateTaskRepository(taskDao: TaskDao): CreateTaskRepository {
+    fun provideCreateTaskRepository(taskDao: com.example.core_data.room.TaskDao): CreateTaskRepository {
         return CreateTaskRepositoryImpl(taskDao)
     }
 

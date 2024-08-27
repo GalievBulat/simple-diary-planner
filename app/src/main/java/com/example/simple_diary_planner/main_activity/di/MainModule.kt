@@ -1,7 +1,5 @@
 package com.example.simple_diary_planner.main_activity.di
 
-import com.example.simple_diary_planner.core_data.json.JsonDataSource
-import com.example.simple_diary_planner.core_data.room.TaskDao
 import com.example.simple_diary_planner.main_activity.domain.MainUseCase
 import com.example.simple_diary_planner.main_activity.domain.MainUseCaseImpl
 import com.example.simple_diary_planner.main_activity.repository.MainRepository
@@ -19,8 +17,8 @@ object MainModule {
     @Provides
     @Singleton
     fun provideMainRepository(
-        jsonDataSource: JsonDataSource,
-        taskDao: TaskDao
+        jsonDataSource: com.example.core_data.json.JsonDataSource,
+        taskDao: com.example.core_data.room.TaskDao
     ): MainRepository = MainRepositoryImpl(jsonDataSource, taskDao)
 
     @Provides

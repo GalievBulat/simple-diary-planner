@@ -20,14 +20,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.simple_diary_planner.core_base.BaseScreen
-import com.example.simple_diary_planner.core_model.Task
 import com.example.simple_diary_planner.feature_calendar.components.BasicCalendar
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
-class CalendarScreen : BaseScreen<CalendarViewModel>() {
+class CalendarScreen : com.example.core_base.BaseScreen<CalendarViewModel>() {
 
     @SuppressLint("SuspiciousIndentation")
     @Composable
@@ -64,7 +62,7 @@ class CalendarScreen : BaseScreen<CalendarViewModel>() {
 }
 
 @Composable
-fun TaskItem(task: Task, onClick: () -> Unit) {
+fun TaskItem(task: com.example.core_model.Task, onClick: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()

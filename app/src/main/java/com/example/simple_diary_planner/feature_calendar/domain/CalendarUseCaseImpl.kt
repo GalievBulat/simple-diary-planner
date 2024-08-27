@@ -1,6 +1,5 @@
 package com.example.simple_diary_planner.feature_calendar.domain
-import com.example.simple_diary_planner.core_model.Task
-import com.example.simple_diary_planner.core_data.mapper.TaskEntityToTaskMapper
+import com.example.core_model.Task
 import com.example.simple_diary_planner.feature_calendar.repository.CalendarRepository
 import com.example.simple_diary_planner.utils.TaskResult
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +13,7 @@ import javax.inject.Inject
 
 class CalendarUseCaseImpl @Inject constructor(
     private val taskRepository: CalendarRepository,
-    private val mapper: TaskEntityToTaskMapper
+    private val mapper: com.example.core_data.mapper.TaskEntityToTaskMapper
 ) : CalendarUseCase {
     override suspend fun getTasksForDate(date: Long): Flow<TaskResult<List<Task>?>> = flow {
         try {

@@ -1,6 +1,6 @@
 package com.example.simple_diary_planner.feature_create_task.domain
 
-import com.example.simple_diary_planner.core_model.TaskEntity
+import com.example.core_data.model.TaskEntity
 import com.example.simple_diary_planner.utils.TaskResult
 import kotlinx.coroutines.flow.Flow
 

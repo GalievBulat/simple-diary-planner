@@ -1,8 +1,7 @@
 package com.example.simple_diary_planner.feature_create_task.presentation
 
 import androidx.lifecycle.viewModelScope
-import com.example.simple_diary_planner.core_base.BaseViewModel
-import com.example.simple_diary_planner.core_model.TaskEntity
+import com.example.core_data.model.TaskEntity
 import com.example.simple_diary_planner.feature_create_task.domain.CreateTaskUseCase
 import com.example.simple_diary_planner.utils.TaskResult
 import com.example.simple_diary_planner.utils.Utils.withTime
@@ -17,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CreateTaskViewModel @Inject constructor(
     private val createTaskUseCase: CreateTaskUseCase
-) : BaseViewModel() {
+) : com.example.core_base.BaseViewModel() {
 
     private val _state = MutableStateFlow(CreateTaskState())
     val state: StateFlow<CreateTaskState> get() = _state

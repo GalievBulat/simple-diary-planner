@@ -21,3 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "simple-diary-planner"
 include(":app")
+include(":app:core_data")
+include(":app:core_base")
+include(":app:core_navigation")
+include(":app:core_model")

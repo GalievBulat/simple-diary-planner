@@ -1,7 +1,6 @@
 package com.example.simple_diary_planner.feature_calendar.presentation
 
 import androidx.lifecycle.viewModelScope
-import com.example.simple_diary_planner.core_base.BaseViewModel
 import com.example.simple_diary_planner.feature_calendar.domain.CalendarUseCase
 import com.example.simple_diary_planner.utils.TaskResult
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CalendarViewModel @Inject constructor(private val calendarUseCase: CalendarUseCase) : BaseViewModel() {
+class CalendarViewModel @Inject constructor(private val calendarUseCase: CalendarUseCase) : com.example.core_base.BaseViewModel() {
     private val _state = MutableStateFlow(CalendarState())
     val state: StateFlow<CalendarState> get() = _state.asStateFlow()
 
