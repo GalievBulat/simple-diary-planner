@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.core_model"
+    namespace = "com.example.core_navigation"
     compileSdk = 34
 
     defaultConfig {
@@ -33,11 +33,12 @@ android {
 }
 
 dependencies {
-
+    implementation (libs.androidx.hilt.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

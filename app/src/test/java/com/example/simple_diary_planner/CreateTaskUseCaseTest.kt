@@ -1,10 +1,7 @@
 package com.example.simple_diary_planner
 
 import com.example.core_data.model.TaskEntity
-import com.example.simple_diary_planner.feature_create_task.domain.CreateTaskUseCase
-import com.example.simple_diary_planner.feature_create_task.domain.CreateTaskUseCaseImpl
-import com.example.simple_diary_planner.feature_create_task.repository.CreateTaskRepository
-import com.example.simple_diary_planner.utils.TaskResult
+import com.example.core_navigation.utils.TaskResult
 import junit.framework.TestCase.assertTrue
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -19,13 +16,14 @@ import org.mockito.junit.MockitoJUnitRunner
 class CreateTaskUseCaseTest {
 
     @Mock
-    private lateinit var createTaskRepository: CreateTaskRepository
+    private lateinit var createTaskRepository: com.example.feature_create_task.repository.CreateTaskRepository
 
-    private lateinit var createTaskUseCase: CreateTaskUseCase
+    private lateinit var createTaskUseCase: com.example.feature_create_task.domain.CreateTaskUseCase
 
     @Before
     fun setUp() {
-        createTaskUseCase = CreateTaskUseCaseImpl(createTaskRepository)
+        createTaskUseCase =
+            com.example.feature_create_task.domain.CreateTaskUseCaseImpl(createTaskRepository)
     }
 
     @Test

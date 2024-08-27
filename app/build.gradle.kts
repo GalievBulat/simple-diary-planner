@@ -56,6 +56,10 @@ dependencies {
     implementation(project(":app:core_base"))
     implementation(project(":app:core_data"))
     implementation(project(":app:core_model"))
+    implementation(project(":app:core_navigation"))
+    implementation(project(":app:feature_calendar"))
+    implementation(project(":app:feature_create_task"))
+    implementation(project(":app:feature_task_detail"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -71,7 +75,6 @@ dependencies {
     implementation (libs.androidx.room.ktx)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.androidx.constraintlayout)
-    implementation(project(":app:core_navigation"))
     ksp (libs.androidx.room.compiler)
 
     // Hilt

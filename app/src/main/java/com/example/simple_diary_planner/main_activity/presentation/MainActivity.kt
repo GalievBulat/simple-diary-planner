@@ -7,9 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
-import com.example.simple_diary_planner.feature_calendar.presentation.CalendarScreen
-import com.example.simple_diary_planner.feature_create_task.presentation.CreateTaskScreen
-import com.example.simple_diary_planner.feature_task_detail.presentation.TaskDetailScreen
+import com.example.feature_calendar.presentation.CalendarScreen
+import com.example.feature_create_task.presentation.CreateTaskScreen
+import com.example.feature_task_detail.presentation.TaskDetailScreen
 import com.example.simple_diary_planner.ui.theme.CalendarAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,13 +28,16 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 com.example.core_navigation.DiaryNavGraph(navController = navController,
                     calendarScreen = {
-                        CalendarScreen().Create(hiltViewModel(), it)
+                        CalendarScreen()
+                            .Create(hiltViewModel(), it)
                     },
                     taskDetailScreen = {
-                        TaskDetailScreen().Create(hiltViewModel(), it)
+                        TaskDetailScreen()
+                            .Create(hiltViewModel(), it)
                     },
                     createTaskScreen = {
-                        CreateTaskScreen().Create(hiltViewModel(), it)
+                        CreateTaskScreen()
+                            .Create(hiltViewModel(), it)
                     })
             }
         }
